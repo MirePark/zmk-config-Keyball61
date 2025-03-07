@@ -35,34 +35,45 @@
             flavor = "tap-preferred";
             bindings = <&mo>, <&mkp>;
         };
-        
+
         inc_mouse_speed: increase_mouse_speed {
             compatible = "zmk,behavior-macro";
             label = "INCREASE_MOUSE_SPEED";
             #binding-cells = <0>;
-            bindings = <&macro_tap &zmk_mouse_config_set ZMK_MOUSE_MOVE_SPEED_INCREMENT 1000>;
+            bindings =
+                <&macro_tap>,
+                <&zmk_mouse_config_set ZMK_MOUSE_MOVE_SPEED_INCREMENT 1000>;
         };
-        
+
         dec_mouse_speed: decrease_mouse_speed {
             compatible = "zmk,behavior-macro";
             label = "DECREASE_MOUSE_SPEED";
             #binding-cells = <0>;
-            bindings = <&macro_tap &zmk_mouse_config_set ZMK_MOUSE_MOVE_SPEED_DECREMENT 1000>;
+            bindings =
+                <&macro_tap>,
+                <&zmk_mouse_config_set ZMK_MOUSE_MOVE_SPEED_DECREMENT 1000>;
         };
-        
+
         inc_scroll_speed: increase_scroll_speed {
             compatible = "zmk,behavior-macro";
             label = "INCREASE_SCROLL_SPEED";
             #binding-cells = <0>;
-            bindings = <&macro_tap &zmk_mouse_config_set ZMK_MOUSE_SCROLL_SPEED_INCREMENT 20>;
+            bindings =
+                <&macro_tap>,
+                <&zmk_mouse_config_set ZMK_MOUSE_SCROLL_SPEED_INCREMENT 20>;
         };
-        
+
         dec_scroll_speed: decrease_scroll_speed {
             compatible = "zmk,behavior-macro";
             label = "DECREASE_SCROLL_SPEED";
             #binding-cells = <0>;
-            bindings = <&macro_tap &zmk_mouse_config_set ZMK_MOUSE_SCROLL_SPEED_DECREMENT 20>;
+            bindings =
+                <&macro_tap>,
+                <&zmk_mouse_config_set ZMK_MOUSE_SCROLL_SPEED_DECREMENT 20>;
         };
+    };
+
+    macros {
     };
 
     keymap {
@@ -81,11 +92,11 @@
 
         number_layer {
             bindings = <
-&kp ESC  &kp F1    &kp F2    &kp F3  &kp F4     &kp F5                      &kp F6         &kp F7        &kp F8        &kp F9        &kp F10     &kp BACKSPACE
-&trans   &trans    &trans    &trans  &trans     &trans                      &trans         &kp NUMBER_7  &kp N8        &kp NUMBER_9  &kp F11     &kp F12
-&trans   &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans                      &trans         &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp SQT     &kp SQT
-&trans   &trans    &trans    &trans  &trans     &trans  &trans  &kp PERIOD  &kp NUMBER_0   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans      &trans
-&trans   &trans    &trans    &trans  &trans     &trans  &trans  &kp INSERT  &kp BACKSPACE                                            &kp K_PREV  &kp C_NEXT
+&kp ESC  &kp F1    &kp F2    &kp F3  &kp F4     &kp F5                       &kp F6         &kp F7        &kp F8        &kp F9        &kp MINUS       &kp EQUAL
+&trans   &trans    &trans    &trans  &trans     &kp F10                      &trans         &kp NUMBER_7  &kp N8        &kp NUMBER_9  &kp F11         &kp F12
+&trans   &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans                       &trans         &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp SQT         &kp SQT
+&trans   &trans    &trans    &trans  &trans     &trans   &trans  &kp PERIOD  &kp NUMBER_0   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans          &trans
+&trans   &trans    &trans    &trans  &trans     &trans   &trans  &kp INSERT  &kp BACKSPACE                                            &kp C_PREVIOUS  &kp C_NEXT
             >;
 
             label = "NUM";
@@ -127,11 +138,11 @@
         scroll_layer {
             label = "SCROLL";
             bindings = <
-&trans      &trans  &trans        &trans        &trans        &trans                  &trans  &trans            &trans             &trans  &trans  &trans
-&trans      &trans  &trans        &trans        &trans        &trans                  &trans  &inc_scroll_speed &dec_scroll_speed  &trans  &trans  &trans
-&trans      &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans                  &trans  &dec_mouse_speed  &inc_mouse_speed   &trans  &trans  &trans
-&trans      &trans  &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans            &trans             &trans  &trans  &trans
-&bt BT_CLR  &trans  &trans        &trans        &trans        &trans  &trans  &trans  &trans                                       &trans  &trans
+&trans      &trans  &trans        &trans        &trans        &trans                  &trans  &trans             &trans             &trans  &trans  &trans
+&trans      &trans  &trans        &trans        &trans        &trans                  &trans  &inc_scroll_speed  &dec_scroll_speed  &trans  &trans  &trans
+&trans      &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans                  &trans  &dec_mouse_speed   &inc_mouse_speed   &trans  &trans  &trans
+&trans      &trans  &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans             &trans             &trans  &trans  &trans
+&bt BT_CLR  &trans  &trans        &trans        &trans        &trans  &trans  &trans  &trans                                                &trans  &trans
             >;
         };
 
