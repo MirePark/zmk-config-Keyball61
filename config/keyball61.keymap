@@ -42,7 +42,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
-                <&zmk_mouse_config_set ZMK_MOUSE_MOVE_SPEED_INCREMENT 1000>;
+                <&zmk_mouse_config_set 0 100>;
         };
 
         dec_mouse_speed: decrease_mouse_speed {
@@ -51,7 +51,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
-                <&zmk_mouse_config_set ZMK_MOUSE_MOVE_SPEED_DECREMENT 1000>;
+                <&zmk_mouse_config_set 1 100>;
         };
 
         inc_scroll_speed: increase_scroll_speed {
@@ -60,7 +60,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
-                <&zmk_mouse_config_set ZMK_MOUSE_SCROLL_SPEED_INCREMENT 20>;
+                <&zmk_mouse_config_set 2 20>;
         };
 
         dec_scroll_speed: decrease_scroll_speed {
@@ -69,7 +69,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
-                <&zmk_mouse_config_set ZMK_MOUSE_SCROLL_SPEED_DECREMENT 20>;
+                <&zmk_mouse_config_set 3 20>;
         };
     };
 
